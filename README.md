@@ -1,4 +1,4 @@
-# My Blog Application
+# OneBlog Application
 
 This is a full-featured blog application built with Next.js and Prisma. The application allows users to create, update, and delete posts, as well as like posts and copy the URL of a post to the clipboard. 
 
