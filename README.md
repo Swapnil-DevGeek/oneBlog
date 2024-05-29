@@ -1,4 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# OneBlog Application
+
+This is a full-featured blog application built with Next.js and Prisma. The application allows users to create, update, and delete posts, as well as like posts and copy the URL of a post to the clipboard. 
+
+## Features
+
+- User Authentication
+- Create, Read, Update, and Delete (CRUD) operations for blog posts
+- Like functionality for blog posts
+- Search functionality
+- Copy URL to clipboard
+- Responsive design with Tailwind CSS
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) - The React Framework for Production
+- [MySQL](https://www.mysql.com/) - Dabase management tool
+- [Prisma](https://www.prisma.io/) - Next-generation ORM for Node.js and JavaScript
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [JWT](https://jwt.io/) - JSON Web Tokens for authentication
+
+## API Endpoints
+
+- `POST /api/write` - Create a new post
+- `PUT /api/updatePost` - Update an existing post
+- `POST /api/likePost` - Like a post
+
+## Usage
+
+### User Authentication
+
+Users can log in using their credentials. Ensure that your `JWT_SECRET` is set up in your environment variables.
+
+### Creating a Post
+
+Navigate to `/addPost` and fill in the form to create a new post.
+
+### Updating a Post
+
+Navigate to the post you want to edit and click the "Edit" button.
+
+### Liking a Post
+
+Click the "Like" button on any post to like it.
+
+### Copy URL to Clipboard
+
+Click the "Copy URL" button on any post to copy its URL to the clipboard.
+
 
 ## Getting Started
 
