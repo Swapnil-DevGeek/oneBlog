@@ -14,7 +14,8 @@ This is a full-featured blog application built with Next.js and Prisma. The appl
 ## Tech Stack
 
 - [Next.js](https://nextjs.org/) - The React Framework for Production
-- [Prisma](https://www.prisma.io/) - Next-generation ORM for Node.js and TypeScript
+- [MySQL](https://www.mysql.com/) - Dabase management tool
+- [Prisma](https://www.prisma.io/) - Next-generation ORM for Node.js and JavaScript
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [JWT](https://jwt.io/) - JSON Web Tokens for authentication
