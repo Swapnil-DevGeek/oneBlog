@@ -8,6 +8,33 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const [searchTerm, setSearchTerm] = useState('');
+  const [results, setResults] = useState([]);
+
+  const handleSearch = async () => {
+    if (!searchTerm) return;
+
+    try {
+      const response = await fetch('/api/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ searchTerm }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setResults(data);
+      } else {
+        console.error('Error searching posts:', data);
+      }
+    } catch (error) {
+      console.error('Error searching posts:', error);
+    }
+  };
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -43,6 +70,7 @@ const Navbar = () => {
     .join("");
 
   return (
+    <>
     <nav className="flex justify-between items-center py-4 px-12 ">
       <div className="flex justify-center items-center gap-4">
         <a href="/" className="cursor-pointer">
@@ -60,7 +88,9 @@ const Navbar = () => {
             Search
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <div 
+            onClick={handleSearch}
+            className="cursor-pointer absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
                 className="w-4 h-4 text-gray-500 dark:text-gray-400"
                 aria-hidden="true"
@@ -78,10 +108,12 @@ const Navbar = () => {
               </svg>
             </div>
             <input
-              type="search"
+              type="text"
+              value={searchTerm}
+              onChange={(e)=>{setSearchTerm(e.target.value)}}
               id="default-search"
               className="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50  dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-600 dark:text-gray-600"
-              placeholder="Search"
+              placeholder="Search Posts"
             />
           </div>
         </div>
@@ -165,6 +197,14 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+
+    <div>
+      
+      
+
+    </div>
+
+    </>
   );
 };
 
